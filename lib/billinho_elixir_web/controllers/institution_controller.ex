@@ -40,4 +40,8 @@ defmodule BillinhoElixirWeb.InstitutionController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def wrong_params(conn, message) do
+    send_resp(conn, :error, "Wrong params")
+  end
 end

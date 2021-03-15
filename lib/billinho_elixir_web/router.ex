@@ -17,6 +17,7 @@ defmodule BillinhoElixirWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/enrolments", EnrollmentController, :index
   end
 
   # Other scopes may use custom stacks.
