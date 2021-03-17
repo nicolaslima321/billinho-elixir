@@ -17,11 +17,27 @@ defmodule BillinhoElixirWeb.Router do
     pipe_through :api
 
     get "/", PageController, :index
+
     get "/enrolments", EnrollmentController, :index
     get "/enrolments/:id", EnrollmentController, :show
     post "/enrolments", EnrollmentController, :create
     delete "/enrolments", EnrollmentController, :delete
     put "/enrolments", EnrollmentController, :update
+
+    get "/invoices", InvoiceController, :index
+    get "/invoices/:id", InvoiceController, :show
+
+    get "/students", StudentsController, :index
+    get "/students/:id", StudentsController, :show
+    post "/students", StudentsController, :create
+    delete "/students", StudentsController, :delete
+    put "/students", StudentsController, :update
+
+    get "/institutions", InstitutionController, :index
+    get "/institutions/:id", InstitutionController, :show
+    post "/institutions", InstitutionController, :create
+    delete "/institutions", InstitutionController, :delete
+    put "/institutions", InstitutionController, :update
   end
 
   # Other scopes may use custom stacks.

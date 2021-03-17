@@ -11,15 +11,6 @@ defmodule BillinhoElixirWeb.InvoiceController do
     render(conn, "index.json", invoices: invoices)
   end
 
-  def create(conn, %{"invoice" => invoice_params}) do
-    with {:ok, %Invoice{} = invoice} <- Directory.create_invoice(invoice_params) do
-      conn
-      |> put_status(:created)
-      |> put_resp_header("location", Routes.invoice_path(conn, :show, invoice))
-      |> render("show.json", invoice: invoice)
-    end
-  end
-
   def show(conn, %{"id" => id}) do
     invoice = Directory.get_invoice!(id)
     render(conn, "show.json", invoice: invoice)

@@ -24,6 +24,6 @@ defmodule BillinhoElixirWeb.FallbackController do
 
   # This clause is an example of how to handle resources that cannot be found.
   def call(conn, _error) do
-    json(conn, %{"message" => "error, you possible made a bad request"})
+    json(conn, %{"message" => "error, you possibly made a bad request"})
   end
 end

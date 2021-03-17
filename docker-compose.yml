@@ -10,7 +10,7 @@ services:
     restart: always
     volumes:
       - 'pgdata:/var/lib/postgresql/data'
-  web:
+  billinho:
     build: .
     depends_on:
       - db
