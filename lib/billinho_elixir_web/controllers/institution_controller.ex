@@ -25,22 +25,6 @@ defmodule BillinhoElixirWeb.InstitutionController do
     render(conn, "show.json", institution: institution)
   end
 
-  def update(conn, %{"id" => id, "institution" => institution_params}) do
-    institution = Directory.get_institution!(id)
-
-    with {:ok, %Institution{} = institution} <- Directory.update_institution(institution, institution_params) do
-      render(conn, "show.json", institution: institution)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    institution = Directory.get_institution!(id)
-
-    with {:ok, %Institution{}} <- Directory.delete_institution(institution) do
-      send_resp(conn, :no_content, "")
-    end
-  end
-
   def wrong_params(conn, message) do
     send_resp(conn, :error, "Wrong params")
   end

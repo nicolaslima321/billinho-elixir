@@ -24,20 +24,4 @@ defmodule BillinhoElixirWeb.StudentController do
     student = Directory.get_student!(id)
     render(conn, "show.json", student: student)
   end
-
-  def update(conn, %{"id" => id, "student" => student_params}) do
-    student = Directory.get_student!(id)
-
-    with {:ok, %Student{} = student} <- Directory.update_student(student, student_params) do
-      render(conn, "show.json", student: student)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    student = Directory.get_student!(id)
-
-    with {:ok, %Student{}} <- Directory.delete_student(student) do
-      send_resp(conn, :no_content, "")
-    end
-  end
 end

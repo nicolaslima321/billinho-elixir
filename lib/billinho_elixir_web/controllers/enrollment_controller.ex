@@ -34,22 +34,6 @@ defmodule BillinhoElixirWeb.EnrollmentController do
     render(conn, "show.json", enrollment: enrollment)
   end
 
-  def update(conn, %{"id" => id, "enrollment" => enrollment_params}) do
-    enrollment = Directory.get_enrollment!(id)
-
-    with {:ok, %Enrollment{} = enrollment} <- Directory.update_enrollment(enrollment, enrollment_params) do
-      render(conn, "show.json", enrollment: enrollment)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    enrollment = Directory.get_enrollment!(id)
-
-    with {:ok, %Enrollment{}} <- Directory.delete_enrollment(enrollment) do
-      send_resp(conn, :no_content, "")
-    end
-  end
-
   defp create_invoices(enrolment, %{"expiration_day" => expiration_day}) do
     current_month = Timex.now().month
     invoice_quantity = enrolment.invoice_quantity
