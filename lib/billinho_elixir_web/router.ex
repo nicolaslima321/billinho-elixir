@@ -2,7 +2,7 @@ defmodule BillinhoElixirWeb.Router do
   use BillinhoElixirWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "json"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
@@ -14,10 +14,14 @@ defmodule BillinhoElixirWeb.Router do
   end
 
   scope "/", BillinhoElixirWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", PageController, :index
     get "/enrolments", EnrollmentController, :index
+    get "/enrolments/:id", EnrollmentController, :show
+    post "/enrolments", EnrollmentController, :create
+    delete "/enrolments", EnrollmentController, :delete
+    put "/enrolments", EnrollmentController, :update
   end
 
   # Other scopes may use custom stacks.

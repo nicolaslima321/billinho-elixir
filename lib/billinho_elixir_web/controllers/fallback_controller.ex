@@ -21,4 +21,9 @@ defmodule BillinhoElixirWeb.FallbackController do
     |> put_view(BillinhoElixirWeb.ErrorView)
     |> render(:"404")
   end
+
+  # This clause is an example of how to handle resources that cannot be found.
+  def call(conn, _error) do
+    json(conn, %{"message" => "error, you possible made a bad request"})
+  end
 end

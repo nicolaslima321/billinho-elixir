@@ -4,7 +4,7 @@ defmodule BillinhoElixir.Directory.Invoice do
 
   schema "invoices" do
     field :enrollment_id, :integer
-    field :expiration_date, :naive_datetime
+    field :expiration_date, :string
     field :invoice_value, :float
     field :status, :string
 

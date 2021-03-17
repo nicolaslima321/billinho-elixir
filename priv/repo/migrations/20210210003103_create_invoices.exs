@@ -4,7 +4,7 @@ defmodule BillinhoElixir.Repo.Migrations.CreateInvoices do
   def change do
     create table(:invoices) do
       add :invoice_value, :float
-      add :expiration_date, :naive_datetime
+      add :expiration_date, :text
       add :enrollment_id, :integer
       add :status, :text
 
