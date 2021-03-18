@@ -25,9 +25,9 @@ defmodule BillinhoElixirWeb.Router do
     get "/invoices", InvoiceController, :index
     get "/invoices/:id", InvoiceController, :show
 
-    get "/students", StudentsController, :index
-    get "/students/:id", StudentsController, :show
-    post "/students", StudentsController, :create
+    get "/students", StudentController, :index
+    get "/students/:id", StudentController, :show
+    post "/students", StudentController, :create
 
     get "/institutions", InstitutionController, :index
     get "/institutions/:id", InstitutionController, :show

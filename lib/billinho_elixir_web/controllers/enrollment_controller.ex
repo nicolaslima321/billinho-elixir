@@ -72,7 +72,7 @@ defmodule BillinhoElixirWeb.EnrollmentController do
     }
   end
 
-  defp params_allowed(params = %{
+  defp params_allowed(%{
     "course_name" => course_name,
     "invoice_quantity" => invoice_quantity,
     "student_id" => student_id,
@@ -91,6 +91,4 @@ defmodule BillinhoElixirWeb.EnrollmentController do
       _ -> {:error, nil}
     end
   end
-
-  defp params_allowed do nil end
 end

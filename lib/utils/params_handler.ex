@@ -1,2 +1,0 @@
-defmodule ParamsHandler do
-end
