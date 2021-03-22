@@ -6,6 +6,7 @@ defmodule BillinhoElixir.Directory.Institution do
     field :cnpj, :string
     field :kind, :string
     field :name, :string
+    belongs_to :enrollments, BillinhoElixir.Directory.Enrollment
 
     timestamps()
   end

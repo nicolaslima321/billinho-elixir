@@ -6,11 +6,13 @@ defmodule BillinhoElixir.Repo.Migrations.CreateEnrollments do
       add :total_price, :float
       add :invoice_quantity, :integer
       add :course_name, :text
-      add :institution_id, :integer
-      add :student_id, :integer
+      add :institution_id, references(:institutions), :integer
+      add :student_id, references(:students), :integer
 
       timestamps()
     end
 
+    create index(:enrollments, [:institution_id])
+    create index(:enrollments, [:student_id])
   end
 end

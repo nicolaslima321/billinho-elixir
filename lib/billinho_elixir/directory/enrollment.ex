@@ -8,7 +8,9 @@ defmodule BillinhoElixir.Directory.Enrollment do
     field :invoice_quantity, :integer
     field :student_id, :integer
     field :total_price, :float
-
+    has_many :invoices, BillinhoElixir.Directory.Invoice
+    has_many :students, BillinhoElixir.Directory.Student
+  
     timestamps()
   end
 

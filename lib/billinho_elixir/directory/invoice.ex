@@ -7,6 +7,7 @@ defmodule BillinhoElixir.Directory.Invoice do
     field :expiration_date, :string
     field :invoice_value, :float
     field :status, :string
+    belongs_to :enrollments, BillinhoElixir.Directory.Enrollment
 
     timestamps()
   end

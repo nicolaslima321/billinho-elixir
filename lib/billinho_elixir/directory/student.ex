@@ -9,6 +9,7 @@ defmodule BillinhoElixir.Directory.Student do
     field :genre, :string
     field :name, :string
     field :payment_method, :string
+    belongs_to :enrollments, BillinhoElixir.Directory.Enrollment
 
     timestamps()
   end
