@@ -12,6 +12,8 @@ defmodule BillinhoElixir.Repo.Migrations.CreateStudents do
 
       timestamps()
     end
-
+    
+    create unique_index(:students, [:name], name: :unique_name_index)
+    create unique_index(:students, [:cpf], name: :unique_cpf_index)
   end
 end
