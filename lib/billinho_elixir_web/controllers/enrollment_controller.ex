@@ -59,6 +59,12 @@ defmodule BillinhoElixirWeb.EnrollmentController do
 
   defp calculate_invoice(enrolment, month, expiration_day) do
     invoice_value = enrolment.total_price / enrolment.invoice_quantity
+
+    Logger.info("Checking date #{expiration_day} for current day #{Timex.now().day}")
+    if (Timex.now().day >= expiration_day) do
+      month =+ 1
+    end
+
     expiration_date = 
       Timex.now().year
       |> Date.new!(month, expiration_day)

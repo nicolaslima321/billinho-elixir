@@ -18,6 +18,6 @@ defmodule BillinhoElixir.Directory.Student do
   def changeset(student, attrs) do
     student
     |> cast(attrs, [:name, :cpf, :birth_date, :celphone, :genre, :payment_method])
-    |> validate_required([:name, :cpf, :birth_date, :celphone, :genre, :payment_method])
+    |> validate_required([:name, :cpf, :genre, :payment_method])
   end
 end

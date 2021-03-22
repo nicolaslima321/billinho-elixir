@@ -5,10 +5,9 @@ defmodule BillinhoElixir.Repo.Migrations.CreateInvoices do
     create table(:invoices) do
       add :invoice_value, :float
       add :expiration_date, :text
-      add :enrollment_id, references(:enrollments), :integer
+      add :enrollment_id, references(:enrollments)
       add :status, :text
 
-      create index(:invoices, [:enrollment_id])
       timestamps()
     end
 
