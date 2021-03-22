@@ -12,7 +12,6 @@ defmodule BillinhoElixir.Repo.Migrations.CreateEnrollments do
       timestamps()
     end
 
-    create index(:enrollments, [:institution_id])
-    create index(:enrollments, [:student_id])
+    create index(:enrollments, [:institution_id, :student_id])
   end
 end
